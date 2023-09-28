@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+        input.error, textarea.error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error" id="nameError"></span><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError"></span><br><br>
+        
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" required>
+        <span class="error" id="websiteError"></span><br><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <span class="error" id="messageError"></span><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            let isValid = true;
+
+            // Name validation
+            const nameInput = document.getElementById('name');
+            const nameError = document.getElementById('nameError');
+            if (!nameInput.value) {
+                nameError.textContent = 'The field is required';
+                nameInput.classList.add('error');
+                isValid = false;
+            } else {
+                nameError.textContent = '';
+                nameInput.classList.remove('error');
+            }
+
+            // Email validation
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailInput.value || !emailPattern.test(emailInput.value)) {
+                emailError.textContent = 'A valid email address is required';
+                emailInput.classList.add('error');
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+                emailInput.classList.remove('error');
+            }
+
+            // Website validation
+            const websiteInput = document.getElementById('website');
+            const websiteError = document.getElementById('websiteError');
+            const websitePattern = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w.-]*)*\/?$/;
+            if (!websiteInput.value || !websitePattern.test(websiteInput.value)) {
+                websiteError.textContent = 'A valid URL is required';
+                websiteInput.classList.add('error');
+                isValid = false;
+            } else {
+                websiteError.textContent = '';
+                websiteInput.classList.remove('error');
+            }
+
+            // Message validation
+            const messageInput = document.getElementById('message');
+            const messageError = document.getElementById('messageError');
+            if (!messageInput.value) {
+                messageError.textContent = 'The field is required';
+                messageInput.classList.add('error');
+                isValid = false;
+            } else {
+                messageError.textContent = '';
+                messageInput.classList.remove('error');
+            }
+
+            if (!isValid) {
+                e.preventDefault(); // Prevent form submission if there are errors
+            }
+        });
+    </script>
+</body>
+</html>

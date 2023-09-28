@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 80%; /* Increase the width */
+            margin: 0 auto;
+            border: 2px solid #FFAAAA; /* Light red border */
+            padding: 20px;
+            background-color: #FFEEEE; /* Light red background */
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex; /* Display form elements and textboxes side by side */
+            align-items: center; /* Align vertically in the center */
+        }
+        label {
+            display: block;
+            flex: 1; /* Allow labels to take up available space */
+            font-weight: bold; /* Make labels bold */
+        }
+        .textbox {
+            flex: 2; /* Allow textboxes to take up available space */
+            margin-left: 10px; /* Add spacing between labels and textboxes */
+        }
+        .languages {
+            display: flex; /* Display checkboxes horizontally */
+        }
+        .languages label {
+            margin-right: 10px; /* Add spacing between checkboxes and labels */
+        }
+        .checkbox-group {
+            display: flex; /* Display checkboxes and label horizontally */
+            align-items: center; /* Align vertically in the center */
+        }
+        .checkbox-label {
+            flex: 3; /* Allow space for the checkbox label */
+            font-weight: bold; /* Make checkbox label bold */
+        }
+        .checkbox-input {
+            flex: 1; /* Allow space for the checkbox input */
+        }
+        .save-button {
+            text-align: center;
+        }
+    </style>
+    <title>Registration Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #0000FF; text-align: center;">Registration Form</h1>
+        <form id="registration-form">
+            <div class="form-group">
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" class="textbox" required>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" class="textbox" required>
+            </div>
+            <!-- Other form fields... -->
+            <div class="form-group">
+                <label class="gender-label">Gender:</label>
+                <input type="radio" id="male" value="Male" name="gender" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" value="Female" name="gender" required>
+                <label for="female">Female</label>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" class="textbox" min="2" max="200" step="1" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" class="textbox" required>
+            </div>
+            <div class="form-group">
+                <label for="box">Address:</label>
+                <textarea id="box" class="textbox" rows="5" cols="75"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" class="textbox" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select name="country" id="country" class="textbox" required>
+                    <option value="" disabled selected>Choose your country</option>
+                    <option value="india">India</option>
+                    <option value="Turkmenistan">Turkmenistan</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="usbekistan">Uzbekistan</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Languages known:</label>
+                <div class="languages">
+                    <input type="checkbox" id="English" name="languages" value="English">
+                    <label for="English">English</label>
+                    <input type="checkbox" id="Kannada" name="languages" value="Kannada">
+                    <label for="Kannada">Kannada</label>
+                    <input type="checkbox" id="Hindi" name="languages" value="Hindi">
+                    <label for="Hindi">Hindi</label>
+                    <input type="checkbox" id="Telugu" name="languages" value="Telugu">
+                    <label for="Telugu">Telugu</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agree" class="checkbox-input" required>
+                    <label class="checkbox-label" for="agree">Hereby I declare all the given details are true</label>
+                </div>
+            </div>
+            <div class="form-group save-button" style="padding-left: 400px;">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function (event) {
+            // Add your form validation logic here
+            if (!validateForm()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            }
+        });
+
+        function validateForm() {
+            // Implement your form validation logic here
+            // Return true if the form is valid, otherwise return false
+            // Example: You can check if required fields are filled, passwords match, etc.
+            // You can access form elements using document.getElementById or document.querySelector
+            return true; // Placeholder; implement your validation logic
+        }
+    </script>
+</body>
+</html>

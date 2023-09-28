@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        
+        .header-row {
+            background-color: rgb(37, 179, 226);
+            height: 5vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .menu-tab {
+            background-color: lightgrey;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .menu-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            display: inline;
+            margin: 0 10px;
+            text-transform: uppercase; 
+            color: white;
+        }
+
+        .first-column {
+            background-color: white;
+            padding: 20px;
+            min-height: 95vh;
+        }
+
+        .second-column {
+            background-color: grey;
+            padding: 20px;
+            min-height: 95vh;
+        }
+
+        .content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        
+        <div class="row header-row">
+            <div class="col-12">
+                <h3 style="padding-left: 45%;">Ethnus Layout</h3>
+            </div>
+        </div>
+
+        
+        <div class="row menu-tab">
+            <div class="col-12">
+                <ul class="menu-items">
+                    <li class="menu-item"><a href="" style="color:white;">HOME</a>  </li>
+                    <li class="menu-item"><a href="" style="color:white;">MENU</a></li>
+                    <li class="menu-item"><a href="" style="color:white;">ABOUT</a></li>
+                    <li class="menu-item"><a href="" style="color:white;">CONTACT</a></li>
+                    <li class="menu-item"><a href="" style="color:white;">SIGNUP</a></li>
+                    <li class="menu-item"><a href="" style="color:white;padding-left: 970px;">LOGIN</a></li>
+                </ul>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-md-9 first-column">
+                <div class="content">
+                    <p>Write Your Content Here</p>
+                </div>
+            </div>
+            <div class="col-md-3 second-column">
+                <div class="content">
+                    <p style="color: white;">This is</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
